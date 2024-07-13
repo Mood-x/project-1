@@ -34,41 +34,46 @@ public class Calculator {
     
                     System.out.print("Enter first number: ");
                     int secondNumber = input.nextInt();
-    
-                    switch (choice) {
-                        case 1:
-                            lastResult = addition(fisrtNumber, secondNumber); 
-                            break;
+                    try {
                         
-                        case 2: 
-                            lastResult = subtraction(fisrtNumber, secondNumber); 
-                            break; 
-                        
-                        case 3: 
-                            lastResult = multiplication(fisrtNumber, secondNumber);
-                            break; 
-    
-                        case 4: 
-                            lastResult = division(fisrtNumber, secondNumber);
-                            break; 
-    
-                        case 5: 
-                            lastResult = modulus(fisrtNumber, secondNumber); 
-                            break;
-    
-                        case 6: 
-                            lastResult = average(fisrtNumber, secondNumber); 
-                            break; 
-    
-                        case 7: 
-                            lastResult = minimum(fisrtNumber, secondNumber); 
-                            break; 
-    
-                        case 8: 
-                            lastResult = maximum(fisrtNumber, secondNumber); 
-                            break; 
+                        switch (choice) {
+                            case 1:
+                                lastResult = addition(fisrtNumber, secondNumber); 
+                                break;
+                            
+                            case 2: 
+                                lastResult = subtraction(fisrtNumber, secondNumber); 
+                                break; 
+                            
+                            case 3: 
+                                lastResult = multiplication(fisrtNumber, secondNumber);
+                                break; 
+        
+                            case 4: 
+                                lastResult = division(fisrtNumber, secondNumber);
+                                break; 
+        
+                            case 5: 
+                                lastResult = modulus(fisrtNumber, secondNumber); 
+                                break;
+        
+                            case 6: 
+                                lastResult = average(fisrtNumber, secondNumber); 
+                                break; 
+        
+                            case 7: 
+                                lastResult = minimum(fisrtNumber, secondNumber); 
+                                break; 
+        
+                            case 8: 
+                                lastResult = maximum(fisrtNumber, secondNumber); 
+                                break; 
+                        }
+        
+                    } catch (ArithmeticException e) {
+                        System.out.println("Error " + e.getMessage());
+                        continue; 
                     }
-    
                     allResults.add(lastResult); 
                     System.out.println("Result: " + lastResult);
                 }else if (choice == 9){
@@ -82,7 +87,7 @@ public class Calculator {
             System.out.println("See you later!");
             
         } catch (InputMismatchException e) {
-            System.out.println("Please enter a number"); 
+            System.out.println("Please enter a number");
         }
 
     }
